@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://horolee.github.io</id>
     <title>Horo</title>
-    <updated>2022-06-29T03:57:37.670Z</updated>
+    <updated>2022-06-29T04:02:44.133Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://horolee.github.io"/>
     <link rel="self" href="https://horolee.github.io/atom.xml"/>
@@ -10,6 +10,86 @@
     <logo>https://horolee.github.io/images/avatar.png</logo>
     <icon>https://horolee.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Horo</rights>
+    <entry>
+        <title type="html"><![CDATA[pip 包整理]]></title>
+        <id>https://horolee.github.io/pip-bao-zheng-li/</id>
+        <link href="https://horolee.github.io/pip-bao-zheng-li/">
+        </link>
+        <updated>2022-06-29T03:59:32.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-python"># create env
+conda create -n pytorch python=3.7
+
+# pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64/
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+
+# cv2
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python
+
+# cython
+pip install cython
+
+# pillow
+pip install pillow
+
+# matplotlib
+pip install matplotlib
+
+# termcolor
+pip install termcolor
+
+# cloudpickle
+pip install cloudpickle
+
+# tabulate
+pip install tabulate
+
+# tensorboard
+pip install tensorboard
+
+# tqdm
+pip install tqdm
+
+# yacs
+pip install yacs
+
+# mock
+pip install mock
+
+# fvcore
+pip install fvcore
+
+# pydot
+pip install pydot
+
+# wheel
+pip install wheel
+
+# future
+pip install future
+
+# lxml
+pip install lxml -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# labelme
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple labelme
+
+# py to pyc
+python -m py_compile train.py
+
+# py to pyd
+1. pip install cython
+2. create setup.py file:
+    from distutils.core import setup
+    from Cython.Build import cythonize
+    setup(
+        name = 'Hello world app',
+        ext_modules = cythonize(&quot;vgg.py&quot;),
+    )
+3. cmd run ：python setup.py build_ext
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[机器学习课后习题-第一章]]></title>
         <id>https://horolee.github.io/deeplearning/</id>
