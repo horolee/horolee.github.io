@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Horo</title>
+<title>pip 包整理 | Horo</title>
 
 <link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1656475855751">
 
@@ -25,11 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,49 +85,147 @@
     </div>
 </nav>
 
-        <div class="post-container">
-            <div class="post-detail gt-bg-theme-color-first">
-                <article class="gt-post-content">
-                    <h2 class="post-title">归档</h2>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    pip 包整理
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-06-29 ·
+                    </time>
+                    
+                        <a href="https://horolee.github.io/334Ki2Ds0/" class="post-tags">
+                            # Python
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <pre><code class="language-python"># create env
+conda create -n pytorch python=3.7
+
+# pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64/
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+
+# cv2
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python
+
+# cython
+pip install cython
+
+# pillow
+pip install pillow
+
+# matplotlib
+pip install matplotlib
+
+# termcolor
+pip install termcolor
+
+# cloudpickle
+pip install cloudpickle
+
+# tabulate
+pip install tabulate
+
+# tensorboard
+pip install tensorboard
+
+# tqdm
+pip install tqdm
+
+# yacs
+pip install yacs
+
+# mock
+pip install mock
+
+# fvcore
+pip install fvcore
+
+# pydot
+pip install pydot
+
+# wheel
+pip install wheel
+
+# future
+pip install future
+
+# lxml
+pip install lxml -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# labelme
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple labelme
+
+# py to pyc
+python -m py_compile train.py
+
+# py to pyd
+1. pip install cython
+2. create setup.py file:
+    from distutils.core import setup
+    from Cython.Build import cythonize
+    setup(
+        name = 'Hello world app',
+        ext_modules = cythonize(&quot;vgg.py&quot;),
+    )
+3. cmd run ：python setup.py build_ext
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://horolee.github.io/deeplearning/" class="post-title gt-a-link">
+                    机器学习课后习题-第一章
+                </a>
+            </div>
         
 
-<div class="archives-container">
-    
-        <h2 class="year gt-c-cotent-color-first">2022</h2>
         
-            
-                <article class="post">
-                    <a href="https://horolee.github.io/pippackage/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-06-29&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            pip 包整理
-                        </div>
-                    </a>
-                </article>
-            
+            <span id="/pippackage//" class="leancloud_visitors" data-flag-title="pip 包整理">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
         
-            
-                <article class="post">
-                    <a href="https://horolee.github.io/deeplearning/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-06-29&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            机器学习课后习题-第一章
-                        </div>
-                    </a>
-                </article>
-            
-        
-    
-</div>
 
-        <div class="pagination-container">
-    
-    
-</div>
+        
 
-    </article>
-</div>
-</div>
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '3IqOkamp9htTpOtTudDhotEl-9Nh9j0Va',
+		appKey: 'VSW9octlc0mhwjniVDKRLbck',
+		avatar: 'retro',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: 'Horo',
+		visitor: true,
+	});
+</script>
+
+        
+
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">Horo的成长之路</div>
     <div class="social-container">
