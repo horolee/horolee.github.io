@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://horolee.github.io</id>
     <title>Gridea</title>
-    <updated>2022-06-29T01:08:07.331Z</updated>
+    <updated>2022-06-29T01:10:51.084Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://horolee.github.io"/>
     <link rel="self" href="https://horolee.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2022, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[机器学习课后习题-第一章]]></title>
-        <id>https://horolee.github.io/post/ji-qi-xue-xi-ke-hou-xi-ti-di-yi-zhang/</id>
-        <link href="https://horolee.github.io/post/ji-qi-xue-xi-ke-hou-xi-ti-di-yi-zhang/">
+        <id>https://horolee.github.io/post/deeplearning/</id>
+        <link href="https://horolee.github.io/post/deeplearning/">
         </link>
         <updated>2022-06-29T01:05:34.000Z</updated>
         <content type="html"><![CDATA[<p>Test</p>
