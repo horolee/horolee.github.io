@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://horolee.github.io</id>
     <title>Horo</title>
-    <updated>2022-07-01T09:02:42.772Z</updated>
+    <updated>2022-07-01T10:04:40.334Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://horolee.github.io"/>
     <link rel="self" href="https://horolee.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2022, Horo</rights>
     <entry>
         <title type="html"><![CDATA[20220701]]></title>
-        <id>https://horolee.github.io/20220701/</id>
-        <link href="https://horolee.github.io/20220701/">
+        <id>https://horolee.github.io/LC20220701/</id>
+        <link href="https://horolee.github.io/LC20220701/">
         </link>
         <updated>2022-07-01T08:37:41.000Z</updated>
         <content type="html"><![CDATA[<h4 id="leetcode每日一题">LeetCode每日一题</h4>
@@ -47,10 +47,74 @@
 <p>对于一个形如x op y的算式而言(op为操作数)，它的结果取决于x和y的结果组合数。接下来该问题的子问题就是x op y 中的x和y的全部组合。属于<strong>分治</strong>问题。</p>
 <p>接下来就是分治算法三步走：</p>
 <ol>
-<li>分解：按运算符分为左右两部分，分别求解</li>
-<li>解决：实现一个递归函数，输入算式，返回算式解</li>
-<li>合并：根据运算符合并左右两部分的解，得出最终解</li>
+<li>
+<p>分解：按运算符分为左右两部分，分别求解</p>
+</li>
+<li>
+<p>解决：实现一个递归函数，输入算式，返回算式解</p>
+</li>
+<li>
+<p>合并：根据运算符合并左右两部分的解，得出最终解</p>
+</li>
 </ol>
+</li>
+<li>
+<p>代码：</p>
+<pre><code class="language-c#">public class Solution {
+    public IList&lt;int&gt; DiffWaysToCompute(string expression) {
+        IList&lt;int&gt; res = new List&lt;int&gt;();
+
+        if(IsDigit(expression)){
+            res.Add(int.Parse(expression));
+            return res;
+        }
+        
+        IList&lt;int&gt; left = new List&lt;int&gt;();
+        IList&lt;int&gt; right = new List&lt;int&gt;();
+
+        // 遍历字符串
+        for(int i = 0; i &lt; expression.Length; i++){
+            if(expression[i] == '+' || expression[i] == '-' || expression[i] == '*'){
+                left = DiffWaysToCompute(expression.Substring(0, i));
+                right =  DiffWaysToCompute(expression.Substring(i + 1, expression.Length - i - 1));
+                foreach(int l in left){
+                    foreach(int r in right){
+                        if(expression[i] == '+'){
+                            res.Add(l + r);
+                        }
+                        if(expression[i] == '-'){
+                            res.Add(l - r);
+                        }
+                        if(expression[i] == '*'){
+                            res.Add(l * r);
+                        }
+                    }
+                }
+            }
+        }
+        
+        return res;
+    }
+
+    private bool IsDigit(string str){
+        if(string.IsNullOrEmpty(str)){
+            return false;
+        }
+        
+        ASCIIEncoding ascii = new ASCIIEncoding();
+        byte[] bytestr = ascii.GetBytes(str);        
+ 
+        foreach (byte c in bytestr)                   
+        {
+            if (c &lt; 48 || c &gt; 57)                          
+            {
+                return false;                             
+            }
+        }
+        return true;
+    }
+}
+</code></pre>
 </li>
 </ul>
 ]]></content>
