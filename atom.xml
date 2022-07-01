@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://horolee.github.io</id>
     <title>Horo</title>
-    <updated>2022-07-01T07:29:16.844Z</updated>
+    <updated>2022-07-01T09:01:19.252Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://horolee.github.io"/>
     <link rel="self" href="https://horolee.github.io/atom.xml"/>
@@ -10,6 +10,51 @@
     <logo>https://horolee.github.io/images/avatar.png</logo>
     <icon>https://horolee.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Horo</rights>
+    <entry>
+        <title type="html"><![CDATA[20220701]]></title>
+        <id>https://horolee.github.io/20220701/</id>
+        <link href="https://horolee.github.io/20220701/">
+        </link>
+        <updated>2022-07-01T08:37:41.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="leetcode每日一题">LeetCode每日一题</h4>
+<h5 id="241-为运算表达式设计优先级"><a href="https://leetcode.cn/problems/different-ways-to-add-parentheses/">241. 为运算表达式设计优先级</a></h5>
+<ul>
+<li>
+<p>题目： 给你一个由数字和运算符组成的字符串 expression ，按不同优先级组合数字和运算符，计算并返回所有可能组合的结果。你可以 按任意顺序 返回答案。生成的测试用例满足其对应输出值符合 32 位整数范围，不同结果的数量不超过 104 。</p>
+<pre><code class="language-c#">示例1：
+输入：expression = &quot;2-1-1&quot;
+输出：[0,2]
+解释：
+((2-1)-1) = 0 
+(2-(1-1)) = 2
+
+示例2：
+输入：expression = &quot;2*3-4*5&quot;
+输出：[-34,-14,-10,-10,10]
+解释：
+(2*(3-(4*5))) = -34 
+((2*3)-(4*5)) = -14 
+((2*(3-4))*5) = -10 
+(2*((3-4)*5)) = -10 
+(((2*3)-4)*5) = 10
+</code></pre>
+</li>
+</ul>
+<p>​</p>
+<ul>
+<li>
+<p>解题思路：</p>
+<p>对于一个形如x op y的算式而言(op为操作数)，它的结果取决于x和y的结果组合数。接下来该问题的子问题就是x op y 中的x和y的全部组合。属于<strong>分治</strong>问题。</p>
+<p>接下来就是分治算法三步走：</p>
+<ol>
+<li>分解：按运算符分为左右两部分，分别求解</li>
+<li>解决：实现一个递归函数，输入算式，返回算式解</li>
+<li>合并：根据运算符合并左右两部分的解，得出最终解</li>
+</ol>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[pip 包整理]]></title>
         <id>https://horolee.github.io/pippackage/</id>

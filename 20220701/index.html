@@ -1,11 +1,10 @@
 <html>
-
 <head>
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>友情链接 - Horo</title>
+<title>20220701 | Horo</title>
 
 <link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1656666075056">
 
@@ -26,12 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
-
 <body>
 <div class="main gt-bg-theme-color-first">
-        <div class="main-content">
-            <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -87,28 +85,109 @@
     </div>
 </nav>
 
-            <div class="post-container">
-                <div class="post-detail">
-                    <article>
-                        <!-- <div class="post-content-wrapper"> -->
-                            <div class="post-content">
-                                <div class="friends-desc">
-                                    
-                                </div>
-                                <h3 id="linklist">友链列表</h3>
-                                
-                                    
-                                
-                            </div>
-                        <!-- </div> -->
-                    </article>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    20220701
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-07-01 ·
+                    </time>
+                    
                 </div>
-                
+                <div class="post-content">
+                    <h4 id="leetcode每日一题">LeetCode每日一题</h4>
+<h5 id="241-为运算表达式设计优先级"><a href="https://leetcode.cn/problems/different-ways-to-add-parentheses/">241. 为运算表达式设计优先级</a></h5>
+<ul>
+<li>
+<p>题目： 给你一个由数字和运算符组成的字符串 expression ，按不同优先级组合数字和运算符，计算并返回所有可能组合的结果。你可以 按任意顺序 返回答案。生成的测试用例满足其对应输出值符合 32 位整数范围，不同结果的数量不超过 104 。</p>
+<pre><code class="language-c#">示例1：
+输入：expression = &quot;2-1-1&quot;
+输出：[0,2]
+解释：
+((2-1)-1) = 0 
+(2-(1-1)) = 2
+
+示例2：
+输入：expression = &quot;2*3-4*5&quot;
+输出：[-34,-14,-10,-10,10]
+解释：
+(2*(3-(4*5))) = -34 
+((2*3)-(4*5)) = -14 
+((2*(3-4))*5) = -10 
+(2*((3-4)*5)) = -10 
+(((2*3)-4)*5) = 10
+</code></pre>
+</li>
+</ul>
+<p>​</p>
+<ul>
+<li>
+<p>解题思路：</p>
+<p>对于一个形如x op y的算式而言(op为操作数)，它的结果取决于x和y的结果组合数。接下来该问题的子问题就是x op y 中的x和y的全部组合。属于<strong>分治</strong>问题。</p>
+<p>接下来就是分治算法三步走：</p>
+<ol>
+<li>分解：按运算符分为左右两部分，分别求解</li>
+<li>解决：实现一个递归函数，输入算式，返回算式解</li>
+<li>合并：根据运算符合并左右两部分的解，得出最终解</li>
+</ol>
+</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://horolee.github.io/pippackage/" class="post-title gt-a-link">
+                    pip 包整理
+                </a>
             </div>
+        
+
+        
+            <span id="/20220701//" class="leancloud_visitors" data-flag-title="20220701">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
 
 
+	<div id="vcomments"></div>
 
-            <div class="site-footer gt-c-content-color-first">
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '3IqOkamp9htTpOtTudDhotEl-9Nh9j0Va',
+		appKey: 'VSW9octlc0mhwjniVDKRLbck',
+		avatar: 'retro',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: 'Horo',
+		visitor: true,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">Horo的成长之路</div>
     <div class="social-container">
         
@@ -138,8 +217,7 @@
   hljs.initHighlightingOnLoad()
 </script>
 
-        </div>
     </div>
+</div>
 </body>
-
 </html>
