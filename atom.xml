@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://horolee.github.io</id>
     <title>Horo</title>
-    <updated>2022-07-01T10:04:40.334Z</updated>
+    <updated>2022-07-03T06:36:12.317Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://horolee.github.io"/>
     <link rel="self" href="https://horolee.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://horolee.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Horo</rights>
     <entry>
-        <title type="html"><![CDATA[20220701]]></title>
+        <title type="html"><![CDATA[LeetCode 每日一题(7/1)]]></title>
         <id>https://horolee.github.io/LC20220701/</id>
         <link href="https://horolee.github.io/LC20220701/">
         </link>
