@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>搜索 - Horo</title>
+<title>字符串 | Horo</title>
 
 <link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1657175956829">
 
@@ -27,20 +25,10 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.0/dist/fuse.basic.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ejs@3.1.3/ejs.min.js"></script>
-    <script src="https://horolee.github.io/media/gridea-search/gridea-search.js"></script>
-    <script src="https://horolee.github.io/media/gridea-search/result-template.ejs" type="text/ejs"></script>
 </head>
-
 <body>
-    <style>
-        .searched-keyword {
-            background-color: yellow;
-            color: red;
-        }
-    </style>
-    <div class="main gt-bg-theme-color-first">
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
         <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
@@ -97,16 +85,62 @@
     </div>
 </nav>
 
-        <div id="gridea-search-result" data-update="1657175956829">
-            <div class="searching" style="font-size: 18px; margin-top: 50px;">
-                <i class="fa fa-sync-alt fa-spin"></i>&nbsp;&nbsp;搜索中......
-                <br><br>
-                <span style="font-size: 65%; color: #aaa">第一次搜索可能需要耗费较长时间构建索引，请耐心等待...</span>
-            </div>
-            <div class="no-result" style="display:none; font-size: 20px; margin-top: 50px;">
-                <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;未搜索到相关文章，请更换关键词
-            </div>
+        <div class="current-tag-container">
+            <h2 class="title gt-c-content-color-first">
+                #字符串
+            </h2>
         </div>
+        <div class="post-list-container">
+    <div class="post-inner">
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://horolee.github.io/leetcode-648/">
+                            <span class="post-title gt-c-content-color-first">LeetCode每日一题(7/7)</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-07-07 ·
+                        </time>
+                        
+                            <a href="https://horolee.github.io/xBtpZPxOJ/" class="post-tag">
+                                # 字典树
+                            </a>
+                        
+                            <a href="https://horolee.github.io/2zhEOGk27G/" class="post-tag">
+                                # 哈希表
+                            </a>
+                        
+                            <a href="https://horolee.github.io/WswWl8n5M9/" class="post-tag">
+                                # 数组
+                            </a>
+                        
+                            <a href="https://horolee.github.io/YQZRYTK1Mr/" class="post-tag">
+                                # 字符串
+                            </a>
+                        
+                            <a href="https://horolee.github.io/KcLOBVO7x/" class="post-tag">
+                                # LeetCode
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+    </div>
+</div>
+        <div class="pagination-container">
+    
+    
+</div>
+
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">Horo的成长之路</div>
     <div class="social-container">
@@ -138,6 +172,6 @@
 </script>
 
     </div>
+</div>
 </body>
-
 </html>
