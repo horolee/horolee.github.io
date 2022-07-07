@@ -6,7 +6,7 @@
 
 <title>LeetCode每日一题(7/7) | Horo</title>
 
-<link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1657179041665">
+<link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1657183212977">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://horolee.github.io/styles/main.css">
@@ -77,7 +77,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1657179041665" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1657183212977" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -223,6 +223,180 @@ public class Solution {
       }
   }
 }
+</code></pre>
+</li>
+</ul>
+<h4 id="208-实现-trie-前缀树"><a href="https://leetcode.cn/problems/implement-trie-prefix-tree/">208. 实现 Trie (前缀树)</a></h4>
+<ul>
+<li>
+<p>题目： Trie（发音类似 &quot;try&quot;）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。</p>
+<p>请你实现 Trie 类：</p>
+<p>Trie() 初始化前缀树对象。<br>
+void insert(String word) 向前缀树中插入字符串 word 。<br>
+boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。<br>
+boolean startsWith(String prefix) 如果之前已经插入的字符串 word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。</p>
+<pre><code class="language-c#">示例1：
+输入
+[&quot;Trie&quot;, &quot;insert&quot;, &quot;search&quot;, &quot;search&quot;, &quot;startsWith&quot;, &quot;insert&quot;, &quot;search&quot;]
+[[], [&quot;apple&quot;], [&quot;apple&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;]]
+输出
+[null, null, true, false, true, null, true]
+
+解释
+Trie trie = new Trie();
+trie.insert(&quot;apple&quot;);
+trie.search(&quot;apple&quot;);   // 返回 True
+trie.search(&quot;app&quot;);     // 返回 False
+trie.startsWith(&quot;app&quot;); // 返回 True
+trie.insert(&quot;app&quot;);
+trie.search(&quot;app&quot;);     // 返回 True
+</code></pre>
+</li>
+</ul>
+<p>​</p>
+<ul>
+<li>
+<p>解题思路：</p>
+<ol>
+<li>数组实现：</li>
+</ol>
+<p>​		前缀树(字典树)是一种多叉树，主要用于存储和查找字符串。假设只存储小写字母，则每一个父节点对应拥有26个子节点(即从a~z)，以及包含是否为一个字符串结束的标志。</p>
+<ol start="2">
+<li>
+<p>哈希表实现：</p>
+<p>​		前缀树(字典树)是一种多叉树，主要用于存储和查找字符串。定义一个哈希表结构的字典树，其中key为字符，value为子树。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>代码：</p>
+<pre><code class="language-c#">// 解法1：数组实现
+public class Trie {
+
+    bool isEnd;
+    Trie[] Children = new Trie[26];
+    
+    public Trie() {
+        
+    }
+    
+    public void Insert(string word) {
+
+        Trie cur = this;
+
+        for(int i = 0; i &lt; word.Length; i++){
+            cur.Children[word[i] - 'a'] ??= new Trie();
+            cur = cur.Children[word[i] - 'a'];
+        }
+
+        cur.isEnd = true;
+    }
+    
+    public bool Search(string word) {
+
+        Trie cur = this;
+        for(int i = 0; i &lt; word.Length; i++){
+            
+            if(cur.Children[word[i] - 'a'] == null){
+                return false;
+            }
+
+            cur = cur.Children[word[i] - 'a'];
+        }
+
+        return cur.isEnd;
+    }
+    
+    public bool StartsWith(string prefix) {
+
+        Trie cur = this;
+        for(int i = 0; i &lt; prefix.Length; i++){
+            if(cur.Children[prefix[i] - 'a'] == null){
+                return false;
+            }
+
+            cur = cur.Children[prefix[i] - 'a'];
+        }
+
+        return true;
+    }
+}
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie obj = new Trie();
+ * obj.Insert(word);
+ * bool param_2 = obj.Search(word);
+ * bool param_3 = obj.StartsWith(prefix);
+ */
+
+// 解法2：哈希表实现
+public class Trie {
+
+    Dictionary&lt;char, Trie&gt; Children;
+    
+    public Trie() {
+        this.Children = new Dictionary&lt;char, Trie&gt;();
+    }
+    
+    public void Insert(string word) {
+
+        Trie cur = this;
+
+        for(int i = 0; i &lt; word.Length; i++){
+            
+            if(!cur.Children.ContainsKey(word[i])){
+                cur.Children.Add(word[i], new Trie());
+            }
+
+            cur = cur.Children[word[i]];
+        }
+
+        if(!cur.Children.ContainsKey('#')){
+            cur.Children.Add('#', new Trie());
+        }
+    }
+    
+    public bool Search(string word) {
+
+        Trie cur = this;
+        for(int i = 0; i &lt; word.Length; i++){
+            if(!cur.Children.ContainsKey(word[i])){
+                return false;
+            }
+
+            cur = cur.Children[word[i]];
+        }
+        
+        if(cur.Children.ContainsKey('#')){
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public bool StartsWith(string prefix) {
+
+        Trie cur = this;
+        for(int i = 0; i &lt; prefix.Length; i++){
+            if(!cur.Children.ContainsKey(prefix[i])){
+                return false;
+            }
+
+            cur = cur.Children[prefix[i]];
+        }
+
+        return true;
+    }
+}
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie obj = new Trie();
+ * obj.Insert(word);
+ * bool param_2 = obj.Search(word);
+ * bool param_3 = obj.StartsWith(prefix);
+ */
 </code></pre>
 </li>
 </ul>
