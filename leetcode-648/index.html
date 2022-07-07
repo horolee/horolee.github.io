@@ -6,7 +6,7 @@
 
 <title>LeetCode每日一题(7/7) | Horo</title>
 
-<link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1657175956829">
+<link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1657178877358">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://horolee.github.io/styles/main.css">
@@ -77,7 +77,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1657175956829" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1657178877358" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -121,9 +121,9 @@
                     <h4 id="648-单词替换"><a href="https://leetcode.cn/problems/replace-words/">648. 单词替换</a></h4>
 <ul>
 <li>
-<p>题目： 在英语中，我们有一个叫做 词根(root) 的概念，可以词根后面添加其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根an，跟随着单词 other(其他)，可以形成新的单词 another(另一个)。</p>
-<p>现在，给定一个由许多词根组成的词典 dictionary 和一个用空格分隔单词形成的句子 sentence。你需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。</p>
-<p>你需要输出替换之后的句子。</p>
+<p>题目： 在英语中，我们有一个叫做 词根(root) 的概念，可以词根后面添加其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根an，跟随着单词 other(其他)，可以形成新的单词 another(另一个)。<br>
+现在，给定一个由许多词根组成的词典 dictionary 和一个用空格分隔单词形成的句子 sentence。你需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。<br>
+你需要输出替换之后的句子。</p>
 <pre><code class="language-c#">示例1：
 输入：dictionary = [&quot;cat&quot;,&quot;bat&quot;,&quot;rat&quot;], sentence = &quot;the cattle was rattled by the battery&quot;
 输出：&quot;the cat was rat by the bat&quot;
@@ -136,11 +136,10 @@
 <li>
 <p>解题思路：</p>
 <ol>
-<li>暴力法：</li>
-</ol>
-<p>​		建立两层循环，外循环遍历sentence数组，内循环遍历dictionary数组，当sentence中的某个元素以dictionary中的某个元素开头时，则写入结果数组中，如果遍历到后期，dictionary数组中的某个短的词根也在sentence的开头，则用最短的替换，最后组合结果，用空格隔开即可。</p>
-<ol start="2">
-<li></li>
+<li>暴力法：<br>
+建立两层循环，外循环遍历sentence数组，内循环遍历dictionary数组，当sentence中的某个元素以dictionary中的某个元素开头时，则写入结果数组中，如果遍历到后期，dictionary数组中的某个短的词根也在sentence的开头，则用最短的替换，最后组合结果，用空格隔开即可。</li>
+<li>字典树:<br>
+利用dicrionary中的所有词根构造一棵字典树，并用特殊符号标记结尾。在搜索前缀时，只需在字典树上搜索出一条最短的前缀路径即可。</li>
 </ol>
 </li>
 <li>
@@ -173,9 +172,61 @@ public class Solution {
         return string.Join(&quot; &quot;, results);
     }
 }
+
+// 解法2：字典树
+public class Solution {
+  public string ReplaceWords(IList&lt;string&gt; dictionary, string sentence) {
+      Trie trie = new Trie();
+      foreach(string word in dictionary){
+          Trie cur = trie;
+          for(int i = 0; i &lt; word.Length; i++){
+              char c = word[i];
+              if(!cur.Children.ContainsKey(c)){
+                  cur.Children.Add(c, new Trie());
+              }
+              cur = cur.Children[c];
+          }
+          cur.Children.Add('#', new Trie());
+      }
+
+      string[] words = sentence.Split(' ');
+      for(int i = 0; i &lt; words.Length; i++){
+          words[i] = FindRoot(words[i], trie);
+      }
+
+      return string.Join(&quot; &quot;, words);
+  }
+
+  public string FindRoot(string word, Trie trie){
+      StringBuilder root = new StringBuilder();
+      Trie cur = trie;
+      for(int i = 0; i &lt; word.Length; i++){
+          char c = word[i];
+          if(cur.Children.ContainsKey('#')){
+              return root.ToString();
+          }
+          if(!cur.Children.ContainsKey(c)){
+              return word;
+          }
+          root.Append(c);
+          cur = cur.Children[c];
+      }
+
+      return root.ToString();
+  }
+
+  public class Trie{
+      public Dictionary&lt;char, Trie&gt; Children;
+
+      public Trie(){
+          Children = new Dictionary&lt;char, Trie&gt;();
+      }
+  }
 </code></pre>
 </li>
 </ul>
+<p>}</p>
+<pre><code></code></pre>
 
                 </div>
             </article>
