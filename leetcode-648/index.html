@@ -6,7 +6,7 @@
 
 <title>LeetCode每日一题(7/7) | Horo</title>
 
-<link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1657178877358">
+<link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1657179041665">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://horolee.github.io/styles/main.css">
@@ -77,7 +77,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1657178877358" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1657179041665" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -146,31 +146,31 @@
 <p>代码：</p>
 <pre><code class="language-c#">// 解法1：暴力法
 public class Solution {
-    public string ReplaceWords(IList&lt;string&gt; dictionary, string sentence) {
-        string[] sentences = sentence.Split(' ');
-        string[] results = new string[sentences.Length];
+  public string ReplaceWords(IList&lt;string&gt; dictionary, string sentence) {
+      string[] sentences = sentence.Split(' ');
+      string[] results = new string[sentences.Length];
 
-        for(int i = 0; i &lt; sentences.Length; i++){
-            foreach(string s in dictionary){
-                if(sentences[i].StartsWith(s)){
-                    if(string.IsNullOrEmpty(results[i])){
-                        results[i] = s;
-                    }
-                    else{
-                        if(s.Length &lt; results[i].Length){
-                            results[i] = s;
-                        }
-                    }
-                }
-            }
+      for(int i = 0; i &lt; sentences.Length; i++){
+          foreach(string s in dictionary){
+              if(sentences[i].StartsWith(s)){
+                  if(string.IsNullOrEmpty(results[i])){
+                      results[i] = s;
+                  }
+                  else{
+                      if(s.Length &lt; results[i].Length){
+                          results[i] = s;
+                      }
+                  }
+              }
+          }
 
-            if(string.IsNullOrEmpty(results[i])){
-                results[i] = sentences[i];
-            }
-        }
+          if(string.IsNullOrEmpty(results[i])){
+              results[i] = sentences[i];
+          }
+      }
 
-        return string.Join(&quot; &quot;, results);
-    }
+      return string.Join(&quot; &quot;, results);
+  }
 }
 
 // 解法2：字典树
@@ -222,11 +222,10 @@ public class Solution {
           Children = new Dictionary&lt;char, Trie&gt;();
       }
   }
+}
 </code></pre>
 </li>
 </ul>
-<p>}</p>
-<pre><code></code></pre>
 
                 </div>
             </article>
