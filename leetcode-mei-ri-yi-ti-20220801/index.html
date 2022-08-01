@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>字符串 | Horo</title>
+<title>LeetCode每日一题(20220801) | Horo</title>
 
 <link rel="shortcut icon" href="https://horolee.github.io/favicon.ico?v=1659360310681">
 
@@ -25,11 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,90 +85,112 @@
     </div>
 </nav>
 
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #字符串
-            </h2>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    LeetCode每日一题(20220801)
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-08-01 ·
+                    </time>
+                    
+                        <a href="https://horolee.github.io/xDs_b8N8u/" class="post-tags">
+                            # Easy
+                        </a>
+                    
+                        <a href="https://horolee.github.io/YQZRYTK1Mr/" class="post-tags">
+                            # 字符串
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h4 id="1374-生成每种字符都是奇数个的字符串"><a href="https://leetcode.cn/problems/generate-a-string-with-characters-that-have-odd-counts/">1374. 生成每种字符都是奇数个的字符串</a></h4>
+<ul>
+<li>题目： 给你一个整数 n，请你返回一个含 n 个字符的字符串，其中每种字符在该字符串中都恰好出现 奇数次 。</li>
+</ul>
+<p>返回的字符串必须只含小写英文字母。如果存在多个满足题目要求的字符串，则返回其中任意一个即可。</p>
+<pre><code class="language-c#">示例1：
+输入：n = 4
+输出：&quot;pppz&quot;
+解释：&quot;pppz&quot; 是一个满足题目要求的字符串，因为 'p' 出现 3 次，且 'z' 出现 1 次。当然，还有很多其他字符串也满足题目要求，比如：&quot;ohhh&quot; 和 &quot;love&quot;。
+
+示例2：
+输入：n = 2
+输出：&quot;xy&quot;
+解释：&quot;xy&quot; 是一个满足题目要求的字符串，因为 'x' 和 'y' 各出现 1 次。当然，还有很多其他字符串也满足题目要求，比如：&quot;ag&quot; 和 &quot;ur&quot;。
+    
+示例3：  
+输入：n = 7
+输出：&quot;holasss&quot;
+</code></pre>
+<ul>
+<li>
+<p>解题思路：</p>
+<p>emmmm........</p>
+</li>
+<li>
+<p>代码：</p>
+</li>
+</ul>
+<pre><code class="language-c#">public class Solution {
+   public string GenerateTheString(int n) {
+       return (n % 2 == 0) ? new string('a', n -1) + 'b' : new string('a', n);
+   }
+}
+</code></pre>
+
+                </div>
+            </article>
         </div>
-        <div class="post-list-container">
-    <div class="post-inner">
+
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://horolee.github.io/leetcode-mei-ri-yi-ti-20220801/">
-                            <span class="post-title gt-c-content-color-first">LeetCode每日一题(20220801)</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-08-01 ·
-                        </time>
-                        
-                            <a href="https://horolee.github.io/xDs_b8N8u/" class="post-tag">
-                                # Easy
-                            </a>
-                        
-                            <a href="https://horolee.github.io/YQZRYTK1Mr/" class="post-tag">
-                                # 字符串
-                            </a>
-                        
-                    </div>
-                </div>
-                
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://horolee.github.io/leetcode-648/" class="post-title gt-a-link">
+                    LeetCode每日一题(7/7)
+                </a>
             </div>
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://horolee.github.io/leetcode-648/">
-                            <span class="post-title gt-c-content-color-first">LeetCode每日一题(7/7)</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-07-07 ·
-                        </time>
-                        
-                            <a href="https://horolee.github.io/xBtpZPxOJ/" class="post-tag">
-                                # 字典树
-                            </a>
-                        
-                            <a href="https://horolee.github.io/2zhEOGk27G/" class="post-tag">
-                                # 哈希表
-                            </a>
-                        
-                            <a href="https://horolee.github.io/WswWl8n5M9/" class="post-tag">
-                                # 数组
-                            </a>
-                        
-                            <a href="https://horolee.github.io/YQZRYTK1Mr/" class="post-tag">
-                                # 字符串
-                            </a>
-                        
-                            <a href="https://horolee.github.io/KcLOBVO7x/" class="post-tag">
-                                # LeetCode
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
+
         
-    </div>
-</div>
-        <div class="pagination-container">
-    
-    
-</div>
+            <span id="/leetcode-mei-ri-yi-ti-20220801//" class="leancloud_visitors" data-flag-title="LeetCode每日一题(20220801)">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '3IqOkamp9htTpOtTudDhotEl-9Nh9j0Va',
+		appKey: 'VSW9octlc0mhwjniVDKRLbck',
+		avatar: 'retro',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: 'Horo',
+		visitor: true,
+	});
+</script>
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">Horo的成长之路</div>
